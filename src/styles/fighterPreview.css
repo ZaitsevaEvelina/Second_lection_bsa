@@ -11,3 +11,14 @@
 .fighter-preview___left {
   align-items: flex-start;
 }
+
+.fighter-image___preview {
+  height: 200px;
+  width: 110px;
+}
+
+.fighter-preview_property{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 19px;
+  color: gold;
+}
