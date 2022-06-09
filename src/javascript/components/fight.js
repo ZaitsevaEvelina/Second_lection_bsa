@@ -115,10 +115,11 @@ export function getHitPower(fighter) {
 }
 
 export function getBlockPower(fighter) {
+
   if(!fighter.block){
     return 0;
   }
-    const dodgeChanse = fighter.critRelease ? 2: Math.random() +1;
+    const dodgeChanse =  Math.random() +1;
     return fighter.defence * dodgeChanse;
   
 }
