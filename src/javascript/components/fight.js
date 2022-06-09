@@ -2,7 +2,6 @@ import { controls } from '../../constants/controls';
 
 export async function fight(firstFighter, secondFighter) {
   return new Promise((resolve) => {
-    // resolve the promise with the winner when fight is over
 
     const healthBarContainer = document.getElementsByClassName('arena___health-bar');
     const healthBars = [...healthBarContainer];
@@ -36,8 +35,8 @@ export async function fight(firstFighter, secondFighter) {
         return false;
       } 
 
-      if(!fighter.critInput.includes(Event.code)){
-        fighter.critInput.push(Event.code);
+      if(!fighter.critInput.includes(event.code)){
+        fighter.critInput.push(event.code);
       }
 
       if(fighter.critInput.length === 3){
@@ -104,21 +103,18 @@ export async function fight(firstFighter, secondFighter) {
 }
 
 export function getDamage(attacker, defender) {
-  // return damage
   const damage= getHitPower(attacker) - getBlockPower(defender);
   return  damage > 0 ? damage : 0;
 
 }
 
 export function getHitPower(fighter) {
-  // return hit power
   const criticalHitChance  = fighter.critRelease ? 2 : Math.random() + 1;
   fighter.critRelease = false;
   return fighter.attack * criticalHitChance;
 }
 
 export function getBlockPower(fighter) {
-  // return block power
   if(!fighter.block){
     return 0;
   }
